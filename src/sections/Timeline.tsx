@@ -77,7 +77,7 @@ function TimelineItem({ project, index }: { project: Project; index: number }) {
         </div>
 
         <div
-          className={`group relative rounded-3xl border border-ink/10 bg-white p-7 transition-all hover:border-accent/40 hover:shadow-[0_30px_60px_-30px_rgba(227,6,19,0.35)] ${
+          className={`group relative rounded-3xl border border-ink/10 bg-panel/70 backdrop-blur p-7 transition-all hover:border-accent/40 hover:shadow-[0_30px_60px_-30px_rgba(222,155,53,0.45)] ${
             project.featured ? 'ring-1 ring-accent/20' : ''
           }`}
         >

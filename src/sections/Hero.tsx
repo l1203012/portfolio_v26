@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Play } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { profile } from '../data'
 
@@ -21,16 +21,7 @@ export function Hero() {
         className="pointer-events-none absolute inset-0 -z-10"
         style={{
           background:
-            'radial-gradient(60% 50% at 70% 20%, rgba(227,6,19,0.18), transparent 60%), radial-gradient(50% 40% at 10% 90%, rgba(227,6,19,0.10), transparent 60%)',
-        }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            'linear-gradient(#0a0a0a 1px, transparent 1px), linear-gradient(90deg, #0a0a0a 1px, transparent 1px)',
-          backgroundSize: '64px 64px',
+            'radial-gradient(60% 50% at 75% 18%, rgba(222,155,53,0.20), transparent 65%), radial-gradient(45% 35% at 8% 88%, rgba(222,155,53,0.10), transparent 60%)',
         }}
       />
 
@@ -70,19 +61,20 @@ export function Hero() {
           transition={{ duration: 0.9, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="mt-12 flex flex-wrap items-center gap-3"
         >
+          <a
+            href="#videos"
+            className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-medium text-bone hover:bg-accent-soft transition-colors"
+          >
+            <Play size={14} fill="currentColor" />
+            Watch demos
+          </a>
           <Link
             to="/work"
-            className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3 text-sm font-medium text-bone hover:bg-accent transition-colors"
+            className="group inline-flex items-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-medium text-ink hover:border-accent hover:text-accent transition-colors"
           >
-            View work
+            View full archive
             <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
           </Link>
-          <a
-            href="#contact"
-            className="inline-flex items-center gap-2 rounded-full border border-ink/15 bg-bone px-6 py-3 text-sm font-medium text-ink hover:border-accent hover:text-accent transition-colors"
-          >
-            Get in touch
-          </a>
         </motion.div>
 
         <motion.dl
@@ -98,16 +90,31 @@ export function Hero() {
         </motion.dl>
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1.5, delay: 1.2 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-eyebrow flex items-center gap-2"
-      >
-        <span className="inline-block h-px w-8 bg-ink/30" />
-        Scroll
-      </motion.div>
+      <ScrollIndicator />
     </section>
+  )
+}
+
+function ScrollIndicator() {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 1.4, delay: 1.2, ease: [0.16, 1, 0.3, 1] }}
+      className="pointer-events-none absolute bottom-12 right-6 hidden flex-col items-center gap-6 sm:right-10 sm:flex"
+      aria-hidden
+    >
+      <span
+        className="font-mono text-[11px] uppercase tracking-[0.45em] text-muted"
+        style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+      >
+        Scroll · Down
+      </span>
+      <div className="relative h-32 w-px overflow-hidden bg-ink/15">
+        <div className="absolute inset-x-0 top-0 h-10 w-px bg-accent animate-scroll-dot" />
+      </div>
+      <span className="block h-1.5 w-1.5 rounded-full bg-accent shadow-[0_0_12px_2px_rgba(222,155,53,0.6)]" />
+    </motion.div>
   )
 }
 

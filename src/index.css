@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    color-scheme: light;
+    color-scheme: dark;
   }
 
   html {
@@ -16,14 +16,14 @@
 
   body {
     font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', system-ui, sans-serif;
-    background: #fafafa;
-    color: #0a0a0a;
+    background: #0E1115;
+    color: #E8E0CE;
     overflow-x: hidden;
   }
 
   ::selection {
-    background: #E30613;
-    color: #ffffff;
+    background: #DE9B35;
+    color: #0E1115;
   }
 
   ::-webkit-scrollbar {
@@ -34,11 +34,11 @@
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(10, 10, 10, 0.15);
+    background: rgba(232, 224, 206, 0.12);
     border-radius: 999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #E30613;
+    background: #DE9B35;
   }
 }
 
@@ -56,15 +56,6 @@
     @apply font-mono text-[11px] uppercase tracking-[0.22em] text-muted;
   }
   .ring-accent-glow {
-    box-shadow: 0 0 0 1px rgba(227, 6, 19, 0.1), 0 24px 60px -20px rgba(227, 6, 19, 0.35);
-  }
-  .grain::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image: radial-gradient(rgba(10,10,10,0.04) 1px, transparent 1px);
-    background-size: 3px 3px;
-    mix-blend-mode: multiply;
+    box-shadow: 0 0 0 1px rgba(222, 155, 53, 0.18), 0 24px 60px -20px rgba(222, 155, 53, 0.45);
   }
 }

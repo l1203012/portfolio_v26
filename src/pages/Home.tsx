@@ -1,18 +1,16 @@
 import { Hero } from '../sections/Hero'
-import { About } from '../sections/About'
+import { Videos } from '../sections/Videos'
 import { Skills } from '../sections/Skills'
 import { Certifications } from '../sections/Certifications'
-import { Hobbies } from '../sections/Hobbies'
 import { Contact } from '../sections/Contact'
 
 export function Home() {
   return (
     <>
       <Hero />
-      <About />
+      <Videos />
       <Skills />
       <Certifications />
-      <Hobbies />
       <Contact />
     </>
   )

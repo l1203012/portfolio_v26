@@ -7,7 +7,7 @@ export function Certifications() {
   return (
     <Section
       id="credentials"
-      eyebrow="04 — Credentials"
+      eyebrow="02 — Credentials"
       title={
         <>
           Certified by

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowLeft } from 'lucide-react'
 import { Timeline } from '../sections/Timeline'
-import { Videos } from '../sections/Videos'
 import { profile } from '../data'
 
 export function Work() {
@@ -19,7 +18,7 @@ export function Work() {
           className="pointer-events-none absolute inset-0 -z-10"
           style={{
             background:
-              'radial-gradient(50% 50% at 80% 0%, rgba(227,6,19,0.16), transparent 70%)',
+              'radial-gradient(50% 50% at 80% 0%, rgba(222,155,53,0.18), transparent 70%)',
           }}
         />
         <div className="container-prose">
@@ -69,7 +68,6 @@ export function Work() {
       </section>
 
       <Timeline />
-      <Videos />
 
       <section className="border-t border-ink/10 py-20">
         <div className="container-prose text-center">
